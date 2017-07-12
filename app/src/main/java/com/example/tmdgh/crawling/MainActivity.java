@@ -148,7 +148,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected String[] doInBackground(String... params) {
             StringBuffer reqStr = new StringBuffer();
-            
             try {
                 String paramName = "image";
                 String imgFile = params[1];
@@ -238,6 +237,8 @@ public class MainActivity extends AppCompatActivity {
             super.onPostExecute(s);
             asyncDialog.dismiss();
             resultTextView.setText(s[0] + "   "+s[1]);
+            Intent intent = new Intent(MainActivity.this,SubActivity.class);
+            startActivity(intent);
         }
     }
 
